@@ -7,4 +7,4 @@ class Ledger(models.Model):
     day = models.DateTimeField()
 
     def __str__(self):
-        return self.title   
+        return str(self.spent_money)
