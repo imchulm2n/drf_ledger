@@ -73,6 +73,14 @@ INSTALLED_APPS = [
     'dj_rest_auth.registration',
 ]
 
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES' : [
+         'rest_framework.permissions.IsAuthenticated',
+    ]
+}
+
+
 REST_USE_JWT = True
 JWT_AUTH_COOKIE = 'my-app-auth'
 JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
