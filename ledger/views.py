@@ -41,14 +41,16 @@ class LedgerAPIView(APIView):
         print(ledger)
         return Response(serializer.data, status=status.HTTP_200_OK)
     
+
     # 게시글 수정
     def put(self, request, pk):
         ledger = get_object_or_404(Ledger, id=pk)
-        serializer = LedgerCreateSerializer(data=request.data)
+        serializer = LedgerCreateSerializer(ledger, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
 
     # 게시글 삭제
     def delete(self, request, pk):
