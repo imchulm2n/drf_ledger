@@ -67,13 +67,13 @@ INSTALLED_APPS = [
     # 설치한 라이브러리들
     'rest_framework',
     'rest_framework.authtoken',
+    'rest_framework_simplejwt',
     'dj_rest_auth',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'dj_rest_auth.registration',
-    'rest_framework_simplejwt',
 ]
 
 
@@ -93,6 +93,7 @@ SIMPLE_JWT = {
     'TOKEN_USER_CLASS': 'user.User',
 }
 
+REST_USE_JWT = True
 JWT_AUTH_COOKIE = 'my-app-auth'
 JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
 
