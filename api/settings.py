@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 import pymysql
 import environ
+import datetime
 
 from pathlib import Path
 
@@ -62,6 +63,7 @@ INSTALLED_APPS = [
     # 새로 추가한 앱
     'accounts',
     'ledger',
+    'urlshortener',
     # 설치한 라이브러리들
     'rest_framework',
     'rest_framework.authtoken',
@@ -71,17 +73,26 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'dj_rest_auth.registration',
+    'rest_framework_simplejwt',
 ]
 
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES' : [
          'rest_framework.permissions.IsAuthenticated',
-    ]
+        ],
 }
 
 
-REST_USE_JWT = True
+# JWT
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": datetime.timedelta(hours=1),
+    "REFRESH_TOKEN_LIFETIME": datetime.timedelta(days=7),
+    "ROTATE_REFRESH_TOKENS": False,
+    'UPDATE_LAST_LOGIN': True,
+    'TOKEN_USER_CLASS': 'user.User',
+}
+
 JWT_AUTH_COOKIE = 'my-app-auth'
 JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
 

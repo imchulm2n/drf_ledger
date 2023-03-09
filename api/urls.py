@@ -6,4 +6,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/accounts/', include('accounts.urls')),
     path('api/', include('ledger.urls')),
+    path('', include('urlshortener.urls')),
 ]
