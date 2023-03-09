@@ -30,14 +30,24 @@ class LedgersAPIView(APIView):
     # 게시글 생성
     def post(self, request):
         last_instance = Ledger.objects.last()
-        serializer = LedgerCreateSerializer(data={
-            "date":request.data.get('date'),
-            "spent_money":request.data.get('spent_money'),
-            "earned_money":request.data.get('earned_money'),
-            "memo":request.data.get('memo'),
-            "balance":int(last_instance.balance) - int(request.data.get('spent_money')) + int(request.data.get('earned_money')),
-        }
-        )
+        if last_instance == None:
+            serializer = LedgerCreateSerializer(data={
+                "date":request.data.get('date'),
+                "spent_money":request.data.get('spent_money'),
+                "earned_money":request.data.get('earned_money'),
+                "memo":request.data.get('memo'),
+                "balance":request.data.get('balance')
+            }
+            )
+        else:
+            serializer = LedgerCreateSerializer(data={
+                "date":request.data.get('date'),
+                "spent_money":request.data.get('spent_money'),
+                "earned_money":request.data.get('earned_money'),
+                "memo":request.data.get('memo'),
+                "balance":int(last_instance.balance) - int(request.data.get('spent_money')) + int(request.data.get('earned_money')),
+            }
+            )
 
         if serializer.is_valid():
             serializer.save()
