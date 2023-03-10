@@ -156,4 +156,18 @@ GET 요청
 생성된 단축 URL로 이동하면 /1/에 해당하는 내역을 확인
 ![image](https://user-images.githubusercontent.com/110436172/224183881-c1d456f7-be04-4e65-b0ba-c845a1e6e57e.png)
 
+## TestCase
+python managy.py test --verbosity 3  
+![image](https://user-images.githubusercontent.com/110436172/224205188-6c51b7e7-1cc3-458b-8e80-0ba928d45503.png)  
+1. 회원가입
+2. 중복 아이디 생성 오류
+3. 비밀번호 오류
+4. 존재하지 않는 아이디 로그인
+5. 비밀번호 불일치
+6. 가계부 목록 조회
+7. 가계부 세부 내역 생성
+8. 가계부 세부 내역 조회
+9. 가계부 세부 내역 수정
+10. 가계부 세부 내역 삭제
+
 
