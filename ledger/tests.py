@@ -30,7 +30,7 @@ class LedgerViewTestCase(APITestCase):
 
     
     # 가계부 목록 조회
-    def test_ledger_list(self):
+    def test_ledgers_list(self):
         self.ledgers_url = "/api/ledger/"
         self.reponse = self.client.get(self.ledgers_url)
         
