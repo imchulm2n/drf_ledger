@@ -148,7 +148,8 @@ balance는 따로 계산
 ## 7. 단축 URL 생성
 http://127.0.0.1:8000/shortener/1/  
 POST 요청  
-/1/에 해당하는 url에 연결되는 단축 url 생성(/Gb9AIq/)
+/1/에 해당하는 url에 연결되는 단축 url 생성(/Gb9AIq/)  
+(특정 시간 뒤에 만료하는 기능을 구현x) 
 ![image](https://user-images.githubusercontent.com/110436172/224183780-1d5f1559-db98-4210-9749-fa0eab488bbe.png)
 
 http://127.0.0.1:8000/Gb9AIq/  
