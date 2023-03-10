@@ -38,6 +38,27 @@ c. 고객은 로그인 이후 가계부 관련 아래의 행동을 할 수 있�
 - memo 메모
 - balance 잔액
 
+## API 명세서
+1. http://127.0.0.1:8000/api/accounts/registration/  
+POST : 회원가입  
+2. http://127.0.0.1:8000/api/accounts/login/  
+POST : 로그인  
+3. http://127.0.0.1:8000/api/accounts/logout/  
+POST : 로그아웃  
+4. http://127.0.0.1:8000/api/ledger/  
+GET : 목록 조회
+POST : 세부 내역 생성
+5. http://127.0.0.1:8000/api/ledger/<pk>/  
+GET : 세부 내역 조회
+PUT : 세부 내역 수정
+DELETE : 세부 내역 삭제
+6. http://127.0.0.1:8000/api/ledger/duplicate/<pk>/  
+POST : 세부 내역 복제
+7. http://127.0.0.1:8000/shortener/<pk>/  
+POST : 단축 URL 생성
+8. http://127.0.0.1:8000/<new_link>/  
+GET : /ledger/<pk>/가 해당하는 URL로 이동
+
 ## a. 회원가입
 http://127.0.0.1:8000/api/accounts/registration/  
 POST 요청  
