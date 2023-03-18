@@ -36,7 +36,7 @@ class LedgersAPIView(APIView):
                 "spent_money":request.data.get('spent_money'),
                 "earned_money":request.data.get('earned_money'),
                 "memo":request.data.get('memo'),
-                "balance":request.data.get('balance')
+                "balance":request.data.get('earned_money')
             }
             )
         else:
